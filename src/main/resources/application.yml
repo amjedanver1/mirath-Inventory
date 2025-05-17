@@ -1,5 +1,23 @@
 spring:
   application:
     name: Mirath-Inventory
+  datasource:
+      url: "jdbc:postgresql://localhost:5432/mirath"
+      username: "postgres"
+      password: "root"
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+          hibernate:
+            temp:
+              use_jdbc_metadata_defaults: true
+            jdbc:
+              lob:
+                non_contextual_creation: true
+#            ejb:
+#              interceptor: com.csi.pms.adt.request.interceptors.TenantInterceptor
 server:
   port: 9093
